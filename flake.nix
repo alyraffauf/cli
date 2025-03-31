@@ -24,7 +24,7 @@
         })
       ];
       
-      supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
+      supportedSystems = ["aarch64-darwin" "x86_64-linux" "aarch64-linux" ];
       forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f rec {
         pkgs = import nixpkgs { inherit overlays system; };
         lib = pkgs.lib;
